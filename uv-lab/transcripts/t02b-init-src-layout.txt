@@ -1,0 +1,19 @@
+$ find src -type f
+src/tally/__init__.py
+
+$ cat src/tally/__init__.py
+def main() -> None:
+    print("Hello from tally!")
+
+$ cat .gitignore
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+

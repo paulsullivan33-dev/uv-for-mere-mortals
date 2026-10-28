@@ -1,0 +1,35 @@
+$ uv lock --check
+Using CPython 3.11.16
+Resolved 5 packages in 1ms
+
+$ # now add "cowsay" to dependencies in pyproject.toml by hand
+$ grep -A3 dependencies pyproject.toml
+dependencies = [
+    "rich>=15.0.0",
+    "cowsay",
+]
+
+$ uv lock --check
+Using CPython 3.11.16
+Resolved 6 packages in 15ms
+error: The lockfile at `uv.lock` needs to be updated, but `--check` was provided.
+
+hint: To update the lockfile, run `uv lock`.
+exit code: 1
+
+$ uv sync --locked
+Using CPython 3.11.16
+Creating virtual environment at: .venv
+Resolved 6 packages in 9ms
+error: The lockfile at `uv.lock` needs to be updated, but `--locked` was provided.
+
+hint: To update the lockfile, run `uv lock`.
+exit code: 1
+
+$ uv lock
+Resolved 6 packages in 5ms
+Added cowsay v6.1
+
+$ uv lock --check
+Resolved 6 packages in 2ms
+

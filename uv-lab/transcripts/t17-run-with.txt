@@ -1,0 +1,10 @@
+$ uv run --with emoji python -c import emoji; print(emoji.emojize(':thumbs_up: borrowed for one run only'))
+Installed 1 package in 1ms
+👍 borrowed for one run only
+
+$ grep -A3 dependencies pyproject.toml
+dependencies = [
+    "rich>=15.0.0",
+]
+
+

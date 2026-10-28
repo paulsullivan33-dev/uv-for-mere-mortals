@@ -1,0 +1,12 @@
+$ uv venv demo-venv
+Using CPython 3.13.18
+Creating virtual environment at: demo-venv
+Activate with: source demo-venv/bin/activate
+
+$ ls demo-venv
+CACHEDIR.TAG
+bin
+lib
+lib64
+pyvenv.cfg
+

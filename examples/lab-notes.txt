@@ -1,0 +1,59 @@
+Lab notes — uv for Mere Mortals
+================================
+
+Machine: 2-CPU, 7.7 GB Ubuntu sandbox, system Python 3.12.3.
+Tool: uv 0.13.6, official standalone binary from
+github.com/astral-sh/uv/releases (archive unpacked in a
+scratch folder, run from there; nothing installed
+system-wide). All package operations hit the real PyPI.
+
+The lab's project is tally, a word counter:
+  uv init tally                     (t01, t02, t02b)
+  uv run tally                      (t03 — first run fetched
+                                     CPython 3.11.16 because
+                                     .python-version said 3.11)
+  uv run tally sample.txt           (t04, stdlib version)
+  uv add rich                       (t05, with uv tree)
+  uv run tally sample.txt           (t06, rich table version)
+  rm -rf .venv && uv sync           (t06, rebuild from lock)
+
+In a scratch copy of tally:
+  uv remove cowsay                  (t16)
+  uv add --dev pytest               (t16, dependency-groups)
+  uv lock --check  / hand edit /    (t13, exit code 1 story,
+  uv sync --locked / uv lock         then the repair)
+
+Borrowing and scripts:
+  uv run --with emoji python -c ... (t17, pyproject unchanged)
+  uv run greet.py                   (t08, PEP 723 block, run
+                                     twice; second run silent)
+
+Tools:
+  uvx cowsay -t "..."               (t07, nothing installed)
+  uv tool install cowsay            (t07, PATH warning kept)
+  uv tool list / uninstall          (t07)
+
+Pythons:
+  uv python list                    (t09)
+  uv python install 3.13            (t10, 33.8 MiB download)
+  uv python find 3.13               (t10)
+  uv python pin 3.13                (t10)
+  uv init --python 3.13 hello313    (t10)
+
+The pip interface:
+  python3 -m venv throwaway         (t11)
+  uv pip install cowsay             (t11)
+  uv pip list / uv pip freeze       (t11)
+  uv venv demo-venv                 (t18)
+  uv pip compile requirements.in    (t12, pinned output with
+                                     # via comments)
+  uv pip install cowsay             (t14 — refuses, exit 2,
+                                     with no environment)
+
+Building:
+  uv build                          (t15, sdist + wheel)
+
+Not run (documented only, per criteria.md): the installer
+script and package-manager routes, uv self update,
+uv publish, workspaces, private indexes, --system,
+--frozen, uv tool upgrade, uv python uninstall.

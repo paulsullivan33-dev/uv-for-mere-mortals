@@ -1,0 +1,37 @@
+$ cat greet.py
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "cowsay",
+# ]
+# ///
+
+import cowsay
+
+cowsay.cow("a script that carries its own shopping list")
+
+$ uv run greet.py
+Installed 1 package in 6ms
+  ___________________________________________
+| a script that carries its own shopping list |
+  ===========================================
+                                           \
+                                            \
+                                              ^__^
+                                              (oo)\_______
+                                              (__)\       )\/\
+                                                  ||----w |
+                                                  ||     ||
+
+$ uv run greet.py
+  ___________________________________________
+| a script that carries its own shopping list |
+  ===========================================
+                                           \
+                                            \
+                                              ^__^
+                                              (oo)\_______
+                                              (__)\       )\/\
+                                                  ||----w |
+                                                  ||     ||
+

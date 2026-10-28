@@ -1,0 +1,13 @@
+$ uv run tally sample.txt
+58 words, 39 different
+         the  15
+          of  3
+     harbour  2
+         and  2
+          is  2
+       wakes  1
+      before  1
+        town  1
+       boats  1
+       knock  1
+

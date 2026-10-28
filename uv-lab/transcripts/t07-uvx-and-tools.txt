@@ -1,0 +1,42 @@
+$ uvx cowsay -t "uv ran me without installing me"
+Installed 1 package in 6ms
+  _______________________________
+| uv ran me without installing me |
+  ===============================
+                               \
+                                \
+                                  ^__^
+                                  (oo)\_______
+                                  (__)\       )\/\
+                                      ||----w |
+                                      ||     ||
+
+$ uv tool install cowsay
+Resolved 1 package in 1ms
+Installed 1 package in 2ms
+ + cowsay==6.1
+Installed 1 executable: cowsay
+warning: `/home/hatch/.local/bin` is not on your PATH. To use installed tools, run `export PATH="/home/hatch/.local/bin:$PATH"` or `uv tool update-shell`.
+
+$ uv tool list
+cowsay v6.1
+- cowsay
+
+$ ~/.local/bin/cowsay -t "and now I am installed"
+  ______________________
+| and now I am installed |
+  ======================
+                      \
+                       \
+                         ^__^
+                         (oo)\_______
+                         (__)\       )\/\
+                             ||----w |
+                             ||     ||
+
+$ uv tool uninstall cowsay
+Uninstalled 1 executable: cowsay
+
+$ uv tool list
+No tools installed
+

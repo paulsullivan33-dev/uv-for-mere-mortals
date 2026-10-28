@@ -1,0 +1,44 @@
+$ uv remove cowsay
+Resolved 5 packages in 24ms
+   Building tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo
+      Built tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo
+Prepared 1 package in 11ms
+Installed 5 packages in 73ms
+ + markdown-it-py==4.2.0
+ + mdurl==0.1.2
+ + pygments==2.21.0
+ + rich==15.0.0
+ + tally==0.1.0 (from file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo)
+
+$ uv add --dev pytest
+Resolved 10 packages in 3.03s
+   Building tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo
+      Built tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo
+Prepared 5 packages in 1.74s
+Uninstalled 1 package in 0.71ms
+Installed 5 packages in 23ms
+ + iniconfig==2.3.1
+ + packaging==26.3
+ + pluggy==1.7.0
+ + pytest==9.2.0
+ ~ tally==0.1.0 (from file:///home/hatch/workspace/build-check/uv-scratch/lab/tally-lockdemo)
+
+$ grep -A6 dependency-groups pyproject.toml
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+$ uv tree
+Resolved 10 packages in 1ms
+tally v0.1.0
+├── rich v15.0.0
+│   ├── markdown-it-py v4.2.0
+│   │   └── mdurl v0.1.2
+│   └── pygments v2.21.0
+└── pytest v9.2.0 (group: dev)
+    ├── iniconfig v2.3.1
+    ├── packaging v26.3
+    ├── pluggy v1.7.0
+    └── pygments v2.21.0
+

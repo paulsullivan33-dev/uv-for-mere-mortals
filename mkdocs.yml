@@ -1,0 +1,28 @@
+site_name: uv for Mere Mortals
+site_description: One fast tool for Python projects, packages and interpreters. Starting a project, adding dependencies, running scripts and tools, managing Python versions, and reproducing an environment exactly from its lockfile.
+site_url: https://paulsullivan33-dev.github.io/uv-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides are staged into docs/ by the deploy workflow before
+# building (README.md becomes index.md, criteria.md is copied in).
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What uv Is: what-uv-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing uv: installing-uv.md
+  - Your First Project: your-first-project.md
+  - Adding Packages: adding-packages.md
+  - Running Code: running-code.md
+  - Tools and uvx: tools-and-uvx.md
+  - Managing Pythons: managing-pythons.md
+  - The pip Interface: the-pip-interface.md
+  - Lockfiles and Syncing: lockfiles-and-syncing.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

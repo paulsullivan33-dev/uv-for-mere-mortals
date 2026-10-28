@@ -1,0 +1,3 @@
+$ uv pip install cowsay   (no virtual environment active)
+error: No virtual environment found; run `uv venv` to create an environment, or pass `--system` to install into a non-virtual environment
+exit code: 2

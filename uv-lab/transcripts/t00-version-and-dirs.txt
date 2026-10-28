@@ -1,0 +1,15 @@
+$ uv --version
+uv 0.13.6 (x86_64-unknown-linux-gnu)
+
+$ uvx --version
+uvx 0.13.6 (x86_64-unknown-linux-gnu)
+
+$ uv cache dir
+/home/hatch/.cache/uv
+
+$ uv python dir
+/home/hatch/.local/share/uv/python
+
+$ uv tool dir
+/home/hatch/.local/share/uv/tools
+

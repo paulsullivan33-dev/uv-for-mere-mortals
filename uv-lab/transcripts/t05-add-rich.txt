@@ -1,0 +1,41 @@
+$ uv add rich
+Resolved 5 packages in 6.36s
+   Building tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally
+      Built tally @ file:///home/hatch/workspace/build-check/uv-scratch/lab/tally
+Downloading pygments (1.2MiB)
+ Downloaded pygments
+Prepared 5 packages in 2.82s
+Uninstalled 1 package in 0.64ms
+Installed 5 packages in 29ms
+ + markdown-it-py==4.2.0
+ + mdurl==0.1.2
+ + pygments==2.21.0
+ + rich==15.0.0
+ ~ tally==0.1.0 (from file:///home/hatch/workspace/build-check/uv-scratch/lab/tally)
+
+$ cat pyproject.toml
+[project]
+name = "tally"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+tally = "tally:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+$ uv tree
+Resolved 5 packages in 1ms
+tally v0.1.0
+└── rich v15.0.0
+    ├── markdown-it-py v4.2.0
+    │   └── mdurl v0.1.2
+    └── pygments v2.21.0
+

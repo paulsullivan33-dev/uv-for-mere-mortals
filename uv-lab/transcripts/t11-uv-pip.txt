@@ -1,0 +1,32 @@
+$ python3 -m venv throwaway
+
+$ uv pip install cowsay
+Using Python 3.12.3 environment at: throwaway
+Resolved 1 package in 6ms
+Installed 1 package in 4ms
+ + cowsay==6.1
+
+$ uv pip list
+Using Python 3.12.3 environment at: throwaway
+Package Version
+------- -------
+cowsay  6.1
+pip     24.0
+
+$ uv pip freeze
+Using Python 3.12.3 environment at: throwaway
+cowsay==6.1
+pip==24.0
+
+$ ./throwaway/bin/cowsay -t installed the pip way
+  _____________________
+| installed the pip way |
+  =====================
+                     \
+                      \
+                        ^__^
+                        (oo)\_______
+                        (__)\       )\/\
+                            ||----w |
+                            ||     ||
+

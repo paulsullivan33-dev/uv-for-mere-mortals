@@ -1,0 +1,49 @@
+$ uv run tally sample.txt
+   58 words, 39    
+     different     
+┏━━━━━━━━━┳━━━━━━━┓
+┃ Word    ┃ Count ┃
+┡━━━━━━━━━╇━━━━━━━┩
+│ the     │    15 │
+│ of      │     3 │
+│ harbour │     2 │
+│ and     │     2 │
+│ is      │     2 │
+│ wakes   │     1 │
+│ before  │     1 │
+│ town    │     1 │
+│ boats   │     1 │
+│ knock   │     1 │
+└─────────┴───────┘
+
+$ rm -rf .venv
+
+$ uv sync
+Using CPython 3.11.16
+Creating virtual environment at: .venv
+Resolved 5 packages in 2ms
+Installed 5 packages in 30ms
+ + markdown-it-py==4.2.0
+ + mdurl==0.1.2
+ + pygments==2.21.0
+ + rich==15.0.0
+ + tally==0.1.0 (from file:///home/hatch/workspace/build-check/uv-scratch/lab/tally)
+
+$ uv run tally sample.txt
+   58 words, 39    
+     different     
+┏━━━━━━━━━┳━━━━━━━┓
+┃ Word    ┃ Count ┃
+┡━━━━━━━━━╇━━━━━━━┩
+│ the     │    15 │
+│ of      │     3 │
+│ harbour │     2 │
+│ and     │     2 │
+│ is      │     2 │
+│ wakes   │     1 │
+│ before  │     1 │
+│ town    │     1 │
+│ boats   │     1 │
+│ knock   │     1 │
+└─────────┴───────┘
+

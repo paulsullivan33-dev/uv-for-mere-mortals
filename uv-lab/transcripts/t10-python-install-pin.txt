@@ -1,0 +1,32 @@
+$ uv python install 3.13
+Downloading cpython-3.13.18-linux-x86_64-gnu (download) (33.8MiB)
+ Downloaded cpython-3.13.18-linux-x86_64-gnu (download)
+Installed Python 3.13.18 in 27.56s
+ + cpython-3.13.18-linux-x86_64-gnu (python3.13)
+warning: `/home/hatch/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/home/hatch/.local/bin:$PATH"` or `uv python update-shell`.
+
+$ uv python find 3.13
+/home/hatch/.local/share/uv/python/cpython-3.13-linux-x86_64-gnu/bin/python3.13
+
+$ mkdir pinned
+
+$ uv python pin 3.13
+Pinned `.python-version` to `3.13`
+
+$ cat .python-version
+3.13
+
+$ uv init --python 3.13 hello313
+Initialized project `hello313` at `/home/hatch/workspace/build-check/uv-scratch/lab/hello313`
+
+$ cat hello313/.python-version
+3.13
+
+$ uv run hello313
+Using CPython 3.13.18
+Creating virtual environment at: .venv
+   Building hello313 @ file:///home/hatch/workspace/build-check/uv-scratch/lab/hello313
+      Built hello313 @ file:///home/hatch/workspace/build-check/uv-scratch/lab/hello313
+Installed 1 package in 14ms
+Hello from hello313!
+
